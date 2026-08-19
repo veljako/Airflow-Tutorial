@@ -3,7 +3,7 @@ version: '3.8'
 services:
   airflow:
     build: .
-    restart: always
+    restart: "no"
     command: >
       bash -c "airflow db migrate &&
                airflow users create --username admin --firstname Admin --lastname User --role Admin --email admin@example.com --password admin || true &&
@@ -23,7 +23,7 @@ services:
 
   streamlit:
     build: .
-    restart: always
+    restart: "no"
     entrypoint: []
     working_dir: /app
     command: ["streamlit", "run", "streamlit_app/app.py", "--server.port=8501", "--server.address=0.0.0.0"]
