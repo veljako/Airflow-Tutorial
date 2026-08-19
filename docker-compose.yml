@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  airflow:
+    build: .
+    restart: always
+    command: >
+      bash -c "airflow db migrate &&
+               airflow users create --username admin --firstname Admin --lastname User --role Admin --email admin@example.com --password admin || true &&
+               (airflow scheduler &) &&
+               exec airflow webserver"
+    ports:
+      - "8085:8080"
+    environment:
+      - AIRFLOW_HOME=/opt/airflow
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - AIRFLOW__CORE__FERNET_KEY=46ExKabim32S-R_y3805aA3P-0B9A-Jp1z9z-s83f4A=
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./utils:/opt/airflow/utils
+      - ./models:/opt/airflow/models
+      - ./results:/opt/airflow/results
+
+  streamlit:
+    build: .
+    restart: always
+    command: streamlit run streamlit_app/app.py --server.port=8501 --server.address=0.0.0.0
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/app
+      - ./results:/app/results
+      - ./models:/app/models
