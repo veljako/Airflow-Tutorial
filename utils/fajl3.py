@@ -1,0 +1,1 @@
+print("treci fajl")
