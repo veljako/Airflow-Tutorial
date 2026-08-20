@@ -7,8 +7,8 @@
 Cilj projekta je praktičan uvod u **Apache Airflow** i automatizaciju celokupnog *data science* ciklusa — od obrade podataka i treniranja modela do serviranja predikcija.
 
 **Korišćene tehnologije:**
-* **Apache Airflow** – orkestracija i automatizacija *pipeline*-a
-* **FastAPI** – REST API za serviranje modela
+* **Apache Airflow** – orkestracija i automatizacija *pipeline*-a;
+* **FastAPI** – REST API za serviranje modela;
 * **Streamlit** – interaktivna web aplikacija za prikaz predikcija
 
 ## SADRŽAJ
