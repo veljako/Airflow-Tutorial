@@ -11,6 +11,7 @@ import shutil
 from datetime import datetime
 from sklearn.metrics import root_mean_squared_error, mean_absolute_error, r2_score
 
+# @task dekorator pretvara običnu Python funkciju u Airflow zadatak (task), automatski upravljajući prenosom podataka i definisanjem zavisnosti unutar pipeline-a.
 @task(task_id='preprocesiranje')
 def preprocesiranje():
     """
