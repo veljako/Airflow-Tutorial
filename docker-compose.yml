@@ -18,6 +18,7 @@ services:
     volumes:
       - ./dags:/opt/airflow/dags
       - ./utils:/opt/airflow/utils
+      - ./data:/opt/airflow/data        
       - ./models:/opt/airflow/models
       - ./results:/opt/airflow/results
 

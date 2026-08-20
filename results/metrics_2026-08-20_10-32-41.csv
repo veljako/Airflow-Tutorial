@@ -1,0 +1,2 @@
+timestamp,model_file,RMSE,MAE,R2,num_samples
+2026-08-20_10-32-41,fullpipeline_2026-08-20.joblib,2688432.33,508176.8,0.7118,11644
