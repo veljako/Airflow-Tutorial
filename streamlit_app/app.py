@@ -10,10 +10,10 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("🏢 NYC Property Price Prediction & Analytics")
+st.title("NYC Property Price Prediction & Analytics")
 st.markdown("Aplikacija za predikciju cena nekretnina u Njujorku i prikaz izveštaja iz Airflow pipeline-a.")
 
-tab1, tab2, tab3 = st.tabs(["🔮 Pojedinacna Predikcija", "📁 Batch Predikcija (Parquet)", "📊 Airflow Rezultati"])
+tab1, tab2, tab3 = st.tabs(["Pojedinacna Predikcija", "Batch Predikcija (Parquet)", "Airflow Rezultati"])
 
 with tab1:
     st.header("Izračunajte cenu nekretnine")
@@ -45,7 +45,7 @@ with tab1:
 
     st.markdown("---")
 
-    if st.button("Izracunaj procenjenu cenu 🚀", type="primary"):
+    if st.button("Izracunaj procenjenu cenu", type="primary"):
         payload = {
             "BOROUGH": str(borough),  
             "NEIGHBORHOOD": str(neighborhood).upper(),
