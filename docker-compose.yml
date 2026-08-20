@@ -18,6 +18,7 @@ services:
     volumes:
       - ./dags:/opt/airflow/dags
       - ./utils:/opt/airflow/utils
+      - ./data:/opt/airflow/data        
       - ./models:/opt/airflow/models
       - ./results:/opt/airflow/results
 
@@ -33,3 +34,16 @@ services:
       - .:/app
       - ./results:/app/results
       - ./models:/app/models
+
+  fastapi:
+    build:
+      context: .
+      dockerfile: fastapi_app/Dockerfile
+    restart: "no"
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./fastapi_app:/app
+      - ./models:/app/models
+      - ./results:/app/results
+      - ./utils:/app/utils
